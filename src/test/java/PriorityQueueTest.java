@@ -22,15 +22,15 @@ public class PriorityQueueTest {
 
     @ParameterizedTest(name = "#{index} - Test with argument={0},{1}")
     @MethodSource("streamProvider")
-    public void PriorityQueueTest_RunTest(int[] random_array, int[] correct_array){
+    public void TestPriorityQueue(int[] random_array, int[] correct_array) {
         PriorityQueue<Integer> testQueue = new PriorityQueue<Integer>();
         int[] result = new int[random_array.length];
 
-        for(int value: random_array){
+        for (int value : random_array) {
             testQueue.add(value);
         }
 
-        for(int i=0; testQueue.size() != 0; i++){
+        for (int i = 0; testQueue.size() != 0; i++) {
             result[i] = testQueue.poll();
         }
 
